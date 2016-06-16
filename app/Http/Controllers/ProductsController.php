@@ -16,6 +16,7 @@ class ProductsController extends Controller {
 
     public function __construct(Product $model)
     {
+        //$this->middleware('auth'); //Authenticat only in this Controller
         $this->model = $model;
     }
 

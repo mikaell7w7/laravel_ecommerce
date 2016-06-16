@@ -52,7 +52,8 @@ class TestController extends Controller
     public function getLogado(){
 
             if(Auth::check()){
-                return "Logado";
+                return Auth::user() . "<br> você esta Logado ". Auth::user()->name;
+
             }
 
                 return "Não está logado";

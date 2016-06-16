@@ -4,6 +4,7 @@ use CodeCommerce\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Contracts\Auth\UserProvider;
+use CodeCommerce\User;
 
 class AuthController extends Controller {
 
