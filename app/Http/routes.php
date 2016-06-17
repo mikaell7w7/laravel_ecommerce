@@ -2,7 +2,7 @@
 
 
 // ROTA PREFIXO ADMIN - INICIO
-Route::group(['prefix'=>'admin','middleware'=>'auth', 'where'=>['id'=>'[0-9]+']],function(){
+Route::group(['prefix'=>'admin','middleware' => 'admin', 'where'=>['id'=>'[0-9]+']],function(){
 
     // ROTAS PARA CATEGORIAS
     Route::group(['prefix'=>'categories'],function(){
@@ -46,7 +46,10 @@ Route::get('cart/add/{id}',['as' => 'cart.add', 'uses' => 'CartController@add'])
 Route::get('cart/minus/{id}',['as' => 'cart.minus', 'uses' => 'CartController@minus']);
 Route::get('cart/destory/{id}',['as' => 'cart.destroy', 'uses' => 'CartController@destroy']);
 
-Route::get('checkout/placeOrder', ['as'=>'checkout.place','uses'=>'CheckoutController@place']);
+Route::group(['prefix'=>'/','middleware'=>'auth'],function(){
+    Route::get('checkout/placeOrder', ['as'=>'checkout.place','uses'=>'CheckoutController@place']);
+});
+
 
 
 Route::get('exemplo', 'WelcomeController@exemplo');

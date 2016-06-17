@@ -41,6 +41,7 @@ class Authenticate {
 			else
 			{
 				return redirect()->guest('auth/login');
+
 			}
 		}
 

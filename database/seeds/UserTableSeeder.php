@@ -49,6 +49,7 @@ class UserTableSeeder extends Seeder{
             [
                 'name'=> 'Mikaell Araujo',
                 'email'=> 'mikaell.7w7@gmail.com',
+                'is_admin' => '7',
                 'password'=> Hash::make('fran2505')
             ]
         );

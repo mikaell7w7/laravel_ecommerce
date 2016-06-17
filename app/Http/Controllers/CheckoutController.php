@@ -28,11 +28,11 @@ class CheckoutController extends Controller
         if($cart->getTotal() > 0){
 
 
-            $order = $orderModel->create(['user_id'=>Auth::user()->id,'total'=>$cart->getTotal()]);
+            $order = $orderModel->create(['user_id'=>Auth::user()->id,'total'=>$cart->getTotal()]); //Create Oders
 
             foreach($cart->all() as $k => $item){
 
-                $order->items()->create(['product_id'=> $k ,'price'=> $item['price'],'qtd'=> $item['qtd']]);
+                $order->items()->create(['product_id'=> $k ,'price'=> $item['price'],'qtd'=> $item['qtd']]); //Create Itens
 
             }
 
