@@ -2,6 +2,8 @@
 
 namespace CodeCommerce\Http\Controllers;
 
+use CodeCommerce\Category;
+use CodeCommerce\Events\CheckoutEvent;
 use CodeCommerce\Order;
 use CodeCommerce\OrderItem;
 use Illuminate\Http\Request;
@@ -25,11 +27,13 @@ class CheckoutController extends Controller
 
         $cart = Session::get('cart');
 
+        $categories = Category::all();
+
         if($cart->getTotal() > 0){
 
 
             $order = $orderModel->create(['user_id'=>Auth::user()->id,'total'=>$cart->getTotal()]); //Create Oders
-
+            //CRIAR AQUI GRAVAÇÃO DO BOLETO
             foreach($cart->all() as $k => $item){
 
                 $order->items()->create(['product_id'=> $k ,'price'=> $item['price'],'qtd'=> $item['qtd']]); //Create Itens
@@ -37,7 +41,13 @@ class CheckoutController extends Controller
             }
 
            //dd($order->items);
-            dd($order);
+           // dd($order);
+            $cart->clear();
+
+            event( new CheckoutEvent());
+
+            return view('store.checkout',compact('order','cart','categories'));
         }
+        return view('store.checkout',['cart'=>'empty'],compact('categories'));
     }
 }

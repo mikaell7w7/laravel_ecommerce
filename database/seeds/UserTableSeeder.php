@@ -43,12 +43,22 @@ class UserTableSeeder extends Seeder{
         }
        *
        * Substituido pela chamada abaixo
+       *
+       *
        */
 
         factory('CodeCommerce\User')->create(
             [
                 'name'=> 'Mikaell Araujo',
                 'email'=> 'mikaell.7w7@gmail.com',
+                'cnpjcpf' =>'68822898249',
+                'inscricao' => '1234567',
+                'end_rua' => 'Estrada Sto Antonio',
+                'end_bairro' =>'Triangulo',
+                'end_cidade' => 'Porto Velho',
+                'end_uf' => 'RO',
+                'end_cep' => '76801097',
+                'end_telefone' => '3229-0000',
                 'is_admin' => '7',
                 'password'=> Hash::make('fran2505')
             ]

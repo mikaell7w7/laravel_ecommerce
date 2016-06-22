@@ -10,6 +10,14 @@ $factory->define('CodeCommerce\User',function($faker){
    return[
         'name'              =>  $faker->name(),
         'email'             =>  $faker->email(),
+        'cnpjcpf'           =>  $faker->randomNumber(5),
+        'inscricao'         =>  $faker->randomNumber(5),
+        'end_rua'           =>$faker->word(),
+        'end_bairro'        =>$faker->word(),
+        'end_cidade'        =>$faker->word(),
+        'end_uf'            =>$faker->word(),
+        'end_cep'           =>$faker->word(),
+        'end_telefone'      =>$faker->word(),
         'password'          =>  str_random(10),
         'remember_token'    =>  str_random(10),
 

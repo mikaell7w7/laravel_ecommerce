@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+	'host' => env('MAIL_HOST', 'mail.cmr-ro.com.br'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'nao-responda@cmr-ro.com.br', 'name' => 'CMR-RONDÔNIA'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -67,7 +67,8 @@ return [
 	|
 	*/
 
-	'encryption' => 'tls',
+	//'encryption' => 'tls',
+	'encryption' => '',
 
 	/*
 	|--------------------------------------------------------------------------

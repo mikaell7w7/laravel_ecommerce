@@ -8,6 +8,7 @@ use CodeCommerce\Http\Requests;
 use CodeCommerce\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+
 class TestController extends Controller
 {
     /**
