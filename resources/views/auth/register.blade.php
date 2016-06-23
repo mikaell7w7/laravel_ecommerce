@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
+				<div class="panel-heading">Cadastro</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -64,6 +64,107 @@
 							</div>
 						</div>
 
+						<div class="form-group{{ $errors->has('inscricao') ? ' has-error' : '' }}">
+							<label class="col-md-4 control-label">Inscrição</label>
+
+							<div class="col-md-6">
+								<input type="number" class="form-control" name="inscricao" value="{{ old('inscricao') }}">
+
+								@if ($errors->has('inscricao'))
+									<span class="help-block">
+                                        <strong>{{ $errors->first('inscricao') }}</strong>
+                                    </span>
+								@endif
+							</div>
+						</div>
+
+
+						<div class="form-group{{ $errors->has('end_rua') ? ' has-error' : '' }}">
+							<label class="col-md-4 control-label">Rua</label>
+
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="end_rua" value="{{ old('end_rua') }}">
+
+								@if ($errors->has('end_rua'))
+									<span class="help-block">
+                                        <strong>{{ $errors->first('end_rua') }}</strong>
+                                    </span>
+								@endif
+							</div>
+						</div>
+
+
+                        <div class="form-group{{ $errors->has('end_bairro') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Bairro</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="end_bairro" value="{{ old('end_bairro') }}">
+
+                                @if ($errors->has('end_bairro'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('end_bairro') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('end_cidade') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Cidade</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="end_cidade" value="{{ old('end_cidade') }}">
+
+                                @if ($errors->has('end_cidade'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('end_cidade') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('end_uf') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">UF</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="end_uf" value="{{ old('end_uf') }}">
+
+                                @if ($errors->has('end_uf'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('end_uf') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group{{ $errors->has('end_cep') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">CEP</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="end_cep" value="{{ old('end_cep') }}">
+
+                                @if ($errors->has('end_cep'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('end_cep') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group{{ $errors->has('end_telefone') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Telefone</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="end_telefone" value="{{ old('end_telefone') }}">
+
+                                @if ($errors->has('end_telefone'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('end_telefone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
 						<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 							<label class="col-md-4 control-label">Password</label>

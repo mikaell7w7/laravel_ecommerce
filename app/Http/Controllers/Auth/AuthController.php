@@ -62,6 +62,12 @@ class AuthController extends Controller {
 			'email' => $data['email'],
 			'cnpjcpf' => $data['cnpjcpf'],
 			'inscricao' => $data['inscricao'],
+			'end_rua' => $data['end_rua'],
+			'end_bairro' => $data['end_bairro'],
+			'end_cidade' => $data['end_cidade'],
+			'end_uf' => $data['end_uf'],
+			'end_cep' => $data['end_cep'],
+			'end_telefone' => $data['end_telefone'],
 			'password' => bcrypt($data['password']),
         ]);
     }
